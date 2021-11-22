@@ -37,8 +37,6 @@ services:
       context: ./node
     volumes:
         - ${WEB_ROOT}:/var/www/html
-    depends_on:
-        - node
     restart: always
 ### PHPMyAdmin Container #########################################
   phpmyadmin:
