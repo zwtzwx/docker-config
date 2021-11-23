@@ -4,16 +4,18 @@ services:
 
 ### Mysql Container #######################################
   mysql:
-    image: mysql:5.7
+    image: mysql:5.7.36
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
     volumes:
-        - ../data/mysql:/var/lib/mysql
+      - /root/docker/data:/var/lib/mysql
     expose:
       - 3306
     ports:
       - "${MYSQL_PORT}:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=haha77697ahbdka9
-      - MYSQL_DATABASE=data
+      - MYSQL_ROOT_PASSWORD=zwt123456
     restart: always
     cap_add: [ SYS_NICE ]
 
